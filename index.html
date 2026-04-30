@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran UMKM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#00B49A',
+                        light: '#F0F9F8',
+                        neutral: '#64748b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .form-shadow {
+                box-shadow: 0 10px 40px rgba(22, 93, 255, 0.08);
+            }
+            .input-focus {
+                @apply focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all duration-200;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-sky-50 to-emerald-50 min-h-screen py-8 px-4 md:px-6">
+    <div class="max-w-3xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-8 opacity-0 animate-[fadeIn_0.6s_ease-in-out_forwards]">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-primary to-secondary text-white text-2xl mb-4 shadow-md">
+                <i class="fa fa-building"></i>
+            </div>
+            <h1 class="text-[clamp(1.7rem,5vw,2.5rem)] font-bold text-gray-800 mb-2">Form Pendaftaran UMKM</h1>
+            <p class="text-neutral max-w-lg mx-auto">Lengkapi data dibawah ini untuk mendaftarkan usaha kamu dan bergabung dalam ekosistem pengembangan UMKM</p>
+        </div>
+
+        <!-- Form Container -->
+        <div class="bg-white rounded-2xl p-6 md:p-8 form-shadow opacity-0 animate-[fadeIn_0.8s_ease-in-out_forwards]">
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Kolom Kiri -->
+                    <div class="space-y-5">
+                        <!-- Nama UMKM -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5">Nama UMKM <span class="text-red-500">*</span></label>
+                            <select class="w-full px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors">
+                                <option value="">-- Pilih atau masukkan nama --</option>
+                                <option value="kuliner">Usaha Kuliner</option>
+                                <option value="kerajinan">Kerajinan Tangan</option>
+                                <option value="fashion">Busana & Fashion</option>
+                                <option value="jasa">Jasa & Layanan</option>
+                                <option value="pertanian">Hasil Pertanian</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                            <input type="text" placeholder="Atau ketik nama usaha kamu" class="w-full mt-2 px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors">
+                        </div>
+
+                        <!-- Nama Pemilik -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5">Nama Pemilik <span class="text-red-500">*</span></label>
+                            <input type="text" value="Noval Al Fairuz" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors bg-gray-50" readonly>
+                        </div>
+
+                        <!-- Alamat Lengkap -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5">Alamat Lengkap <span class="text-red-500">*</span></label>
+                            <textarea class="w-full px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors bg-gray-50" rows="2" readonly>Jl Petamburan 5 rt12 rw05</textarea>
+                        </div>
+
+                        <!-- Kontak -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1.5">No. HP / WhatsApp <span class="text-red-500">*</span></label>
+                                <input type="tel" value="08979848933" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors bg-gray-50" readonly>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1.5">Email <span class="text-neutral text-xs">(opsional)</span></label>
+                                <input type="email" value="nopalvall89@gmail.com" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors bg-gray-50" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Kanan -->
+                    <div class="space-y-5">
+                        <!-- Kategori Usaha -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5">Kategori Usaha <span class="text-red-500">*</span></label>
+                            <select class="w-full px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors">
+                                <option value="">-- Pilih Kategori --</option>
+                                <option value="makanan">Makanan & Minuman</option>
+                                <option value="fashion">Pakaian & Aksesoris</option>
+                                <option value="kerajinan">Kerajinan & Dekorasi</option>
+                                <option value="jasa">Jasa (Konsultasi, Servis, dll)</option>
+                                <option value="digital">Produk Digital & Teknologi</option>
+                                <option value="kesehatan">Kesehatan & Kecantikan</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                        </div>
+
+                        <!-- Jam Operasional -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5">Jam Operasional <span class="text-red-500">*</span></label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="text-xs text-neutral mb-1 block">Buka</label>
+                                    <input type="time" class="w-full px-3 py-2 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors">
+                                </div>
+                                <div>
+                                    <label class="text-xs text-neutral mb-1 block">Tutup</label>
+                                    <input type="time" class="w-full px-3 py-2 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors">
+                                </div>
+                            </div>
+                            <input type="text" placeholder="Contoh: Senin - Minggu, 08.00 - 21.00 WIB" class="w-full mt-2 px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors">
+                        </div>
+
+                        <!-- Deskripsi Usaha -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5">Deskripsi Usaha <span class="text-red-500">*</span></label>
+                            <select class="w-full px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors mb-2">
+                                <option value="">-- Pilih deskripsi umum --</option>
+                                <option value="1">Usaha yang menyediakan produk berkualitas dengan harga terjangkau</option>
+                                <option value="2">Mengutamakan bahan alami dan proses produksi yang ramah lingkungan</option>
+                                <option value="3">Melayani pesanan custom dan pengiriman ke seluruh Indonesia</option>
+                                <option value="4">Menggabungkan tradisi dan inovasi dalam setiap produk</option>
+                            </select>
+                            <textarea placeholder="Atau tulis deskripsi usaha kamu disini..." class="w-full px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian Daftar Produk -->
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                        <i class="fa fa-shopping-bag text-secondary"></i>
+                        Daftar Produk Unggulan
+                    </h3>
+
+                    <!-- Item Produk -->
+                    <div class="bg-light/50 p-5 rounded-xl border border-secondary/10 hover:shadow-md hover:border-secondary/30 transition-all duration-300">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1.5">Nama Produk</label>
+                                <select class="w-full px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors">
+                                    <option value="">-- Pilih --</option>
+                                    <option value="p1">Produk Utama</option>
+                                    <option value="p2">Produk Terlaris</option>
+                                    <option value="p3">Produk Baru</option>
+                                    <option value="p4">Paket Hemat</option>
+                                    <option value="lain">Lainnya</option>
+                                </select>
+                                <input type="text" placeholder="Ketik nama produk" class="w-full mt-2 px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1.5">Harga (Rp)</label>
+                                <select class="w-full px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors">
+                                    <option value="">-- Kisaran Harga --</option>
+                                    <option value="dibawah50">Di bawah Rp50.000</option>
+                                    <option value="50-100">Rp50.000 - Rp100.000</option>
+                                    <option value="100-200">Rp100.000 - Rp200.000</option>
+                                    <option value="atas200">Di atas Rp200.000</option>
+                                </select>
+                                <input type="number" placeholder="Masukkan nominal" class="w-full mt-2 px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1.5">Deskripsi Singkat</label>
+                                <select class="w-full px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors">
+                                    <option value="">-- Pilih --</option>
+                                    <option value="a">Bahan pilihan, awet dan nyaman digunakan</option>
+                                    <option value="b">Rasa otentik, higienis, dan halal bersertifikat</option>
+                                    <option value="c">Desain unik, dibuat dengan tangan dan penuh ketelitian</option>
+                                    <option value="d">Praktis, mudah digunakan, dan efisien</option>
+                                </select>
+                            </div>
+                        </div>
+                        <textarea placeholder="Atau tulis deskripsi singkat produk..." class="w-full px-4 py-2.5 rounded-lg border border-gray-300 input-focus hover:border-gray-400 transition-colors" rows="2"></textarea>
+                        
+                        <button type="button" class="mt-3 text-sm text-primary hover:text-primary/80 font-medium flex items-center gap-1 transition-colors">
+                            <i class="fa fa-plus-circle"></i> Tambah Produk Lainnya
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tombol Aksi -->
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <button type="reset" class="px-6 py-3 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-100 hover:border-gray-400 transition-all duration-200 flex-1">
+                        Reset Form
+                    </button>
+                    <button type="submit" class="px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 flex-1">
+                        <i class="fa fa-paper-plane mr-2"></i> Kirim Pendaftaran
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <footer class="text-center mt-8 text-sm text-neutral">
+            <p>© 2024 Pendataan UMKM | Dikembangkan untuk kemajuan usaha lokal</p>
+        </footer>
+    </div>
+
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</body>
+</html>
+
